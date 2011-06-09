@@ -1,0 +1,10 @@
+#!/bin/bash
+
+result=`xmlrpc gate $@ | 
+grep "integer" | 
+sed -e "s/.*:\s*\(.*\)/\1/" | 
+tr "\n" "+" | 
+xargs -I{} echo {} "0" | 
+bc`
+
+echo ${result:-0}

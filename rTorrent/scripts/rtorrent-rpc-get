@@ -1,5 +1,5 @@
 #!/bin/bash
 
-xmlrpc gate $@ | 
+xmlrpc localhost $@ | 
 tail -n1 | 
 sed -e "s/.*:\s*\(.*\)/\1/"

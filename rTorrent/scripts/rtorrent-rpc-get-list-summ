@@ -1,6 +1,6 @@
 #!/bin/bash
 
-result=`xmlrpc gate $@ | 
+result=`xmlrpc localhost $@ | 
 grep "integer" | 
 sed -e "s/.*:\s*\(.*\)/\1/" | 
 tr "\n" "+" | 
